@@ -17,7 +17,7 @@ import (
 )
 
 func init() {
-	reexec.Register(DriverName, initializer)
+	reexec.Register("native", initializer)
 }
 
 func initializer() {
