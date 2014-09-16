@@ -1097,7 +1097,7 @@ func (daemon *Daemon) ImageGetCached(imgID string, config *runconfig.Config) (*i
 func checkKernelAndArch() error {
 	// Check for unsupported architectures
 	if runtime.GOARCH != "amd64" {
-		return fmt.Errorf("The Docker runtime currently only supports amd64 (not %s). This will change in the future. Aborting.", runtime.GOARCH)
+		log.Infof("WARNING: The Docker runtime officially currently only supports amd64 (not %s). This will change in the future. Aborting.", runtime.GOARCH)
 	}
 	// Check for unsupported kernel versions
 	// FIXME: it would be cleaner to not test for specific versions, but rather
