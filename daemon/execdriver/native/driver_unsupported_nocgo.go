@@ -1,4 +1,4 @@
-// +build linux,!cgo
+// +build !cgo
 
 package native
 
@@ -9,5 +9,5 @@ import (
 )
 
 func NewDriver(root, initPath string) (execdriver.Driver, error) {
-	return nil, fmt.Errorf("native driver not supported on non-linux")
+	return nil, fmt.Errorf("native driver not supported without cgo")
 }

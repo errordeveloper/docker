@@ -25,11 +25,6 @@ import (
 	"github.com/docker/libcontainer/system"
 )
 
-const (
-	DriverName = "native"
-	Version    = "0.2"
-)
-
 type activeContainer struct {
 	container *libcontainer.Config
 	cmd       *exec.Cmd
